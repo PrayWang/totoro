@@ -1,0 +1,458 @@
+/*--------------------------------------------------
+  // TEMPLATE
+---------------------------------------------------*/
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+html {
+  display: table;
+}
+body {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #eff2cc;
+}
+#wrapper {
+  width: 100%;
+  max-width: 800px;
+  height: 600px;
+  margin: auto;
+}
+.frame,
+.row {
+  width: 100%;
+  height: 100%;
+  float: left;
+  position: relative;
+}
+/*--------------------------------------------------
+  // ILLUSTRATION
+---------------------------------------------------*/
+.illustration {
+  width: 234px;
+  position: absolute;
+  margin-top: 140px;
+  left: 50%;
+  margin-left: -117px;
+}
+.box {
+  width: 100%;
+  height: 100%;
+  float: left;
+  position: relative;
+}
+/*--------------------------------------------------
+  // TOTORO
+---------------------------------------------------*/
+
+.base {
+  background-color: #afa5a0;
+}
+.round {
+  /* -webkit-border-radius: 50%; */
+  /* -moz-border-radius: 50%; */
+  /* -o-webkit-border-radius: 50%; */
+  /* -ms-webkit-border-radius: 50%; */
+  border-radius: 50%;
+  /* -khtml-border-radius: 50%; */
+}
+
+/*
+---------
+HEAD
+---------
+*/
+.head-mask {
+  width: 44px;
+  height: 12px;
+  position: absolute;
+  z-index: 20;
+  top: -10px;
+  left: 50%;
+  margin-left: -22px;
+  background-color: #eff2cc;
+}
+.plant {
+  width: 34px;
+  height: 10px;
+  position: absolute;
+  z-index: 40;
+  left: 50%;
+  margin-left: -15px;
+}
+.plant .back {
+  float: left;
+  width: 100%;
+  height: 2px;
+
+  background-color: #24551b;
+}
+.plant .back:before {
+  width: 0;
+  height: 0;
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid #24551b;
+  border-left: 3px solid transparent;
+  top: 0;
+  left: -3px;
+  z-index: 40;
+}
+.leaf {
+  position: absolute;
+  z-index: 60;
+  background-color: #6ba03c;
+}
+.leaf-left {
+  width: 22px;
+  height: 10px;
+
+  /* -webkit-border-radius: 0px 0px 22px 12px; */
+  border-radius: 0px 0px 22px 12px;
+}
+.leaf-right {
+  width: 14px;
+  height: 8px;
+  left: 20px;
+
+  /* -webkit-border-radius: 0px 0px 7px 7px; */
+  border-radius: 0px 0px 7px 7px;
+}
+.head {
+  float: left;
+  width: 150px;
+  height: 130px;
+  margin-left: 42px;
+  position: relative;
+}
+
+.ear {
+  width: 14px;
+  height: 46px;
+  top: -29px;
+  position: absolute;
+}
+.ear-left {
+  left: 19px;
+}
+.ear-right {
+  right: 19px;
+}
+.ear::before,
+.ear::after {
+  width: 0;
+  height: 0;
+  position: absolute;
+  content: "";
+  border-bottom: 30px solid #afa5a0;
+  top: 0;
+}
+.ear::after {
+  right: -8px;
+  border-right: 9px solid transparent;
+  /* 利用渐变，形成一个体型 */
+}
+.ear::before {
+  left: -8px;
+  border-left: 9px solid transparent;
+}
+.ear .top {
+  width: 14px;
+  height: 20px;
+  position: absolute;
+  top: -6px;
+}
+.ear .bottom {
+  width: 30px;
+  height: 14px;
+  position: absolute;
+  bottom: 9px;
+  left: -8px;
+}
+.ear-rotateleft {
+  -ms-transform: rotate(-15deg);
+  /* -webkit-transform: rotate(-15deg); */
+  transform: rotate(-15deg);
+}
+.ear-rotateright {
+  -ms-transform: rotate(15deg);
+  /* -webkit-transform: rotate(15deg); */
+  transform: rotate(15deg);
+}
+.eye {
+  width: 18px;
+  height: 18px;
+  overflow: hidden;
+  top: 30px;
+  position: absolute;
+  background-color: #fff;
+}
+.eye-left {
+  left: 28px;
+}
+.eye-right {
+  right: 28px;
+}
+.eye .pupil {
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+
+  background-color: #6c5f57;
+
+  transition: all 1s ease;
+  /* -webkit-transition: all 1s ease; */
+  animation: pupil_eye 6s ease 3s infinite;
+  /* -webkit-animation: pupil_eye 6s ease 3s infinite; */
+}
+/* @-webkit-keyframes pupil_eye {
+  40% {
+    top: 1px;
+  }
+  70% {
+    top: 1px;
+  }
+  80% {
+    top: 5px;
+  }
+} */
+@keyframes pupil_eye {
+  40% {
+    top: 1px;
+  }
+  60% {
+    top: 3px;
+  }
+  80% {
+    top: 5px;
+  }
+}
+/* 把瞳孔往上移 */
+.nose {
+  width: 24px;
+  height: 10px;
+  top: 34px;
+  left: 50%;
+  margin-left: -12px;
+  position: absolute;
+  background-color: #5e5244;
+}
+.moustache {
+  position: absolute;
+  top: 46px;
+  z-index: 30;
+}
+
+.moustache-left {
+  left: -39px;
+}
+
+.moustache-right {
+  right: -39px;
+}
+
+.moustache .line1,
+.moustache .line2,
+.moustache .line3 {
+  height: 2px;
+  clear: both;
+  background-color: #464b4d;
+  margin-bottom: 5px;
+}
+
+.moustache .line1 {
+  width: 32px;
+}
+
+.moustache .line2 {
+  width: 54px;
+}
+
+.moustache .line3 {
+  width: 40px;
+}
+
+.moustache .b-last {
+  margin-bottom: 0;
+}
+
+.moustache-left .line1,
+.moustache-left .line2,
+.moustache-left .line3 {
+  float: right;
+}
+.moustache-left .line2 {
+  margin-right: 5px;
+}
+.moustache-left .line3 {
+  margin-right: 9px;
+}
+.moustache-right .line1,
+.moustache-right .line2,
+.moustache-right .line3 {
+  float: left;
+}
+.moustache-right .line2 {
+  margin-left: 5px;
+}
+.moustache-right .line3 {
+  margin-left: 9px;
+}
+.moustache .rotateleft {
+  -ms-transform: rotate(5deg);
+  /* -webkit-transform: rotate(5deg); */
+  transform: rotate(5deg);
+}
+.moustache .rotateright {
+  -ms-transform: rotate(-5deg);
+  /* -webkit-transform: rotate(-5deg); */
+  transform: rotate(-5deg);
+}
+/*
+---------
+BODY
+---------
+*/
+.body {
+  float: left;
+  width: 220px;
+  height: 230px;
+  margin: -78px 0 0 7px;
+  position: relative;
+}
+/*
+---------
+ARM
+---------
+*/
+.arm {
+  width: 70px;
+  height: 124px;
+  position: absolute;
+}
+.arm-left {
+  left: -7px;
+}
+.arm-right {
+  right: -7px;
+}
+.hand {
+  position: absolute;
+  bottom: 0;
+  width: 70px;
+  height: 80px;
+}
+.forearm {
+  width: 24px;
+  height: 70px;
+  position: absolute;
+  margin-top: -3px;
+}
+.arm-left .forearm {
+  left: 25px;
+}
+.arm-right .forearm {
+  right: 25px;
+}
+.arm .rotateleft {
+  /* -ms-transform: rotate(30deg); */
+  /* -webkit-transform: rotate(30deg); */
+  transform: rotate(30deg);
+}
+.arm .rotateright {
+  /* -ms-transform: rotate(-30deg); */
+  /* -webkit-transform: rotate(-30deg); */
+  transform: rotate(-30deg);
+}
+/*
+---------
+BELLY
+---------
+*/
+.belly {
+  width: 200px;
+  height: 190px;
+  top: 10px;
+  left: 50%;
+  margin-left: -100px;
+  position: absolute;
+  background-color: #f8ddcc;
+}
+.belly .mark1 {
+  top: 30px;
+}
+
+.belly .mark2 {
+  top: 65px;
+}
+
+.marking {
+  width: 30px;
+  height: 14px;
+  position: absolute;
+  background-color: #91838e;
+}
+
+.marking::before {
+  width: 30px;
+  height: 20px;
+  top: 3px;
+  left: 0;
+  position: absolute;
+  content: "";
+  background-color: #f8ddcc;
+
+  /* -webkit-border-radius: 50%; */
+  border-radius: 50%;
+}
+
+.belly .rotateleft {
+  /* -webkit-transform: rotate(-10deg); */
+  transform: rotate(-10deg);
+}
+
+.belly .rotateright {
+  /* -webkit-transform: rotate(10deg); */
+  transform: rotate(10deg);
+}
+
+/*
+---------
+FOOT
+---------
+*/
+.foot {
+  width: 150px;
+  height: 18px;
+  background-color: #eff2cc;
+  position: absolute;
+  z-index: 60;
+  bottom: 0;
+  left: 50%;
+  margin-left: -75px;
+}
+
+.foot::before,
+.foot::after {
+  width: 0;
+  height: 0;
+  position: absolute;
+  content: "";
+  border-bottom: 4px solid #eff2cc;
+  top: -4px;
+}
+
+.foot::before {
+  left: 71px;
+  border-left: 4px solid transparent;
+}
+.foot::after {
+  left: 75px;
+  border-right: 4px solid transparent;
+}

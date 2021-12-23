@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>画一只龙猫</title>
+</head>
+<body>
+    <div id="demo"></div>
+    <style id="demo2"></style>
+    <div id="buttons">
+        <button id="btnPause">暂停</button>
+        <button id="btnPlay">播放</button>
+        <button id="btnSlow">慢速</button>
+        <button id="btnNormal">中速</button>
+        <button id="btnFast">快速</button>
+    </div>
+<style>
+    html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+html {
+    display: table;
+}
+.frame,
+.row {
+    width: 100%;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+.box {
+    width: 100%;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+body {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.illustration {
+    width: 234px;
+    position: absolute;
+    margin-top: 140px;
+    left: 50%;
+    margin-left: -117px;
+    top:-60px;
+  }
+.frame,
+.row {
+    width: 100%;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+.box {
+    width: 100%;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+.base {
+    background-color: #afa5a0;
+}
+.round {
+    border-radius: 50%;
+}
+.head-mask {
+    width: 44px;
+    height: 12px;
+    position: absolute;
+    z-index: 20;
+    top: -10px;
+    left: 50%;
+    margin-left: -22px;
+  }
+
+  .plant {
+    width: 34px;
+    height: 10px;
+    position: absolute;
+    z-index: 40;
+    left: 50%;
+    margin-left: -15px;
+  }
+
+  .plant .back:before {
+    width: 0;
+    height: 0;
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid #24551b;
+    border-left: 3px solid transparent;
+    top: 0;
+    left: -3px;
+    z-index: 40;
+  }
+  .leaf-left {
+    width: 22px;
+    height: 10px;
+    border-radius: 0px 0px 22px 12px;
+  }
+  .leaf-right {
+    width: 14px;
+    height: 8px;
+    left: 20px;
+    border-radius: 0px 0px 7px 7px;
+  }
+  
+  .ear-left {
+    left: 19px;
+  }
+  .ear-right {
+    right: 19px;
+  }
+  
+  .ear::after {
+    right: -8px;
+    border-right: 9px solid transparent;
+  }
+  .ear::before {
+    left: -8px;
+    border-left: 9px solid transparent;
+  }
+ 
+  .ear-rotateleft {
+    -ms-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+  }
+  .ear-rotateright {
+    -ms-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }  
+
+  .eye-left {
+    left: 28px;
+  }
+  .eye-right {
+    right: 28px;
+  }
+
+  @keyframes pupil_eye {
+    40% {
+      top: 1px;
+    }
+    60% {
+      top: 3px;
+    }
+    80% {
+      top: 5px;
+    }
+  }
+  .moustache {
+    position: absolute;
+    top: 46px;
+    z-index: 30;
+  }
+  
+  .moustache-left {
+    left: -39px;
+  }
+  .moustache-right {
+    right: -39px;
+  }
+    
+  .moustache .line1 {
+    width: 32px;
+  }
+  
+  .moustache .line2 {
+    width: 54px;
+  }
+  
+  .moustache .line3 {
+    width: 40px;
+  }
+  .moustache .b-last {
+    margin-bottom: 0;
+  }
+
+   
+  .moustache-left .line1,
+  .moustache-left .line2,
+  .moustache-left .line3 {
+    float: right;
+  }
+  .moustache-right .line1,
+  .moustache-right .line2,
+  .moustache-right .line3 {
+    float: left;
+  }
+  .moustache-right .line2 {
+    margin-left: 5px;
+  }
+  .moustache-right .line3 {
+    margin-left: 9px;
+  }
+
+  .moustache .rotateleft {
+    -ms-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+  .moustache .rotateright {
+    -ms-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+  }
+
+  .arm-left {
+    left: -7px;
+  }
+  .arm-right {
+    right: -7px;
+  }
+
+  .arm-left .forearm {
+    left: 25px;
+  }
+  .arm-right .forearm {
+    right: 25px;
+  }
+
+  .arm .rotateleft {
+    transform: rotate(30deg);
+  }
+  .arm .rotateright {
+    transform: rotate(-30deg);
+  }
+  .belly .mark1 {
+    top: 30px;
+  }
+  
+  .belly .mark2 {
+    top: 65px;
+  } 
+  .belly .rotateleft {
+    transform: rotate(-10deg);
+  }
+  
+  .belly .rotateright {
+    transform: rotate(10deg);
+  }
+  
+  .foot:before,
+  .foot:after {
+    width: 0;
+    height: 0;
+    position: absolute;
+    content: "";
+    border-bottom: 4px solid #eff2cc;
+    top: -4px;
+  }
+  
+  .foot:before {
+    left: 71px;
+    border-left: 4px solid transparent;
+  }
+  .foot:after {
+    left: 75px;
+    border-right: 4px solid transparent;
+  } 
+/* 分界线 */
+    * {box-sizing: border-box;}
+    *::before,*::after{
+        box-sizing: border-box;
+    }
+
+    #buttons{
+        position : fixed;
+        z-index : 10;
+        display: flex;
+        flex-direction: column;
+        top: 10px;
+        right: 10px;
+    }
+    #buttons>button{
+        margin-top:10px;
+        padding: 4px 8px;
+    }
+    #demo2{
+        display: none;
+    }
+    #demo{
+        position: fixed;
+        height: 50vh;
+        top:0;
+        left: 0;
+        width: 100%;
+        overflow-y:auto;
+    }
+    #demo::-webkit-scrollbar{
+        display:none;
+    }
+    #html{
+        position: fixed;
+        bottom:0;
+        left:0;
+        width: 100%;
+        height:50vh;
+    }
+       
+    @media(max-width:500px){
+        .illustration {
+            width: 234px;
+            position: absolute;
+            margin-top: 140px;
+            left: 50%;
+            margin-left: -117px;
+            top:-80px;
+        }
+    }
+    </style>
+    <div id="html">
+        <div id="wrapper">
+            <div class="frame">
+                <div class="illustration">
+                    
+                    <div class="plant">
+                    <div class="row">
+                    <div class="leaf leaf-left"></div>
+                    <div class="leaf leaf-right"></div>
+                    
+                    <div class="back"></div>
+                    </div>
+                    </div>
+                    
+                    <div class="head-mask"></div>
+                    
+                    <div class="base head round">
+                                
+                    <div class="base ear ear-left ear-rotateleft">
+                    <div class="row">
+                    <div class="base round top"></div>
+                    <div class="base round bottom"></div>
+                    </div>
+                    </div>
+                    
+                    <div class="base ear ear-right ear-rotateright">
+                    <div class="row">
+                    <div class="base round top"></div>
+                    <div class="base round bottom"></div>
+                    </div>
+                    </div>
+                    
+                    <div class="eye round eye-left">
+                    <div class="row">
+                    <div class="pupil round"></div>
+                    </div>
+                    </div>
+                    <div class="eye round eye-right">
+                    <div class="row">
+                    <div class="pupil round"></div>
+                    </div>
+                    </div>
+                    
+                    <div class="nose round"></div>
+                    
+                    <div class="moustache moustache-left">
+                    <div class="line1 rotateleft"></div>
+                    <div class="line2"></div>
+                    <div class="line3 b-last rotateright"></div>
+                    </div>
+                    
+                    <div class="moustache moustache-right">
+                    <div class="line1 rotateright"></div>
+                    <div class="line2"></div>
+                    <div class="line3 b-last rotateleft"></div>
+                    </div>
+                    
+                    </div>
+                    
+                    <div class="base body round">
+                    
+                    <div class="arm arm-left">
+                    <div class="row">
+                    <div class="base forearm rotateleft"></div>
+                    <div class="base hand round"></div>
+                    </div>
+                    </div>
+                    
+                    <div class="arm arm-right">
+                    <div class="row">
+                    <div class="base forearm rotateright"></div>
+                    <div class="base hand round"></div>
+                    </div>
+                    </div>
+                    
+                    <div class="belly round">			
+                    <div class="row">
+                    
+                        <div class="marking round mark1 rotateleft" style="left:20%;"></div>
+                        <div class="marking round mark1" style="left:50%; margin-left:-15px;"></div>
+                        <div class="marking round mark1 rotateright" style="right:20%;"></div>
+                        
+                        <div class="marking round mark2 rotateleft" style="left:10%;"></div>
+                        <div class="marking round mark2" style="left:32%;"></div>
+                        <div class="marking round mark2" style="right:32%;"></div>
+                        <div class="marking round mark2 rotateright" style="right:10%;"></div>
+                    
+                    </div>			
+                    </div>
+                    
+                    </div>
+                    
+                    <div class="foot">
+                    </div>
+                                
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="test.js"></script>
+</body>
+</html>
