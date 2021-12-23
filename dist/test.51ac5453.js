@@ -103,86 +103,72 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({"css.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var string = "\n/*\u4F60\u597D\uFF0C\u6211\u662F\u4E00\u540D\u524D\u7AEF\u65B0\u4EBA\uFF0C\u63A5\u4E0B\u6765\u6211\u5C06\u7528CSS\u6765\u753B\u4E00\u53EA\u9F99\u732B*/\n/*\u9996\u5148\uFF0C\u51C6\u5907\u597D\u4E00\u4E2A\u80CC\u666F*/\n#wrapper{\n    width:100%;\n    background-color: #eff2cc;\n    height:50vh;\n    position:relative;\n}\n/*\u8BA9\u6211\u4EEC\u5F00\u59CB\u753B\u9F99\u732B\u7684\u8111\u888B*/\n.head-mask {\n    background-color: #eff2cc;\n  }\n  .plant .back {\n    float: left;\n    width: 100%;\n    height: 2px;\n    background-color: #24551b;\n  }\n  .leaf {\n    position: absolute;\n    z-index: 60;\n    background-color: #6ba03c;\n  }\n  .head {\n    float: left;\n    width: 150px;\n    height: 130px;\n    margin-left: 42px;\n    position: relative;\n  }\n  /*\u7ED9\u5B83\u753B\u4E0A\u8033\u6735*/\n  .ear {\n    width: 14px;\n    height: 46px;\n    top: -30px;\n    position: absolute;\n    z-index:1;\n  }\n  .ear::before,\n  .ear::after {\n    width: 0;\n    height: 0;\n    position: absolute;\n    content: \"\";\n    border-bottom: 30px solid #afa5a0;\n    top: 0;\n  }\n  .ear .top {\n    width: 14px;\n    height: 20px;\n    position: absolute;\n    top: -6px;\n  }\n  .ear .bottom {\n    width: 30px;\n    height: 14px;\n    position: absolute;\n    bottom: 9px;\n    left: -8px;\n  }\n  /*\u6DFB\u4E0A\u773C\u775B*/\n  .eye {\n    width: 18px;\n    height: 18px;\n    overflow: hidden;\n    top: 30px;\n    position: absolute;\n    background-color: #fff;\n  }\n  .eye .pupil {\n    width: 12px;\n    height: 12px;\n    position: absolute;\n    left: 5px;\n    top: 5px;\n    background-color: #6c5f57;\n    transition: all 1s ease;\n    animation: pupil_eye 6s ease 3s infinite;\n  }\n  /*\u8865\u4E0A\u9F3B\u5B50*/\n  .nose {\n    width: 24px;\n    height: 10px;\n    top: 34px;\n    left: 50%;\n    margin-left: -12px;\n    position: absolute;\n    background-color: #5e5244;\n  }\n  /*\u7ED9\u5B83\u52A0\u70B9\u80E1\u987B*/\n  .moustache .line1,\n  .moustache .line2,\n  .moustache .line3 {\n    height: 2px;\n    clear: both;\n    background-color: #464b4d;\n    margin-bottom: 5px;\n  }\n  .moustache-left .line2 {\n    margin-right: 5px;\n  }\n  .moustache-left .line3 {\n    margin-right: 9px;\n  }\n  /*\u63A5\u4E0B\u6765\u753B\u9F99\u732B\u80D6\u4E4E\u4E4E\u7684\u8EAB\u4F53*/\n  .body {\n    float: left;\n    width: 220px;\n    height: 230px;\n    margin: -78px 0 0 7px;\n    position: relative;\n  }\n  /*\u6DFB\u4E0A\u624B\u81C2*/\n  .arm {\n    width: 70px;\n    height: 124px;\n    position: absolute;\n  }\n  .hand {\n    position: absolute;\n    bottom: 0;\n    width: 70px;\n    height: 80px;\n  }\n  .forearm {\n    width: 24px;\n    height: 70px;\n    position: absolute;\n    margin-top: -3px;\n  }\n\n  /*\u7ED9\u5B83\u7684\u8179\u90E8\u586B\u4E0A\u82B1\u7EB9*/\n  .belly {\n    width: 200px;\n    height: 190px;\n    top: 10px;\n    left: 50%;\n    margin-left: -100px;\n    position: absolute;\n    background-color: #f8ddcc;\n  } \n  .marking {\n    width: 30px;\n    height: 14px;\n    position: absolute;\n    background-color: #91838e;\n  }\n  .marking:before {\n    width: 30px;\n    height: 20px;\n    top: 3px;\n    left: 0;\n    position: absolute;\n    content: \"\";\n    background-color: #f8ddcc;\n    border-radius: 50%;\n  }\n\n  /*\u6700\u540E\u662F\u9F99\u732B\u7684\u811A*/\n  .foot {\n    width: 150px;\n    height: 18px;\n    background-color: #eff2cc;\n    position: absolute;\n    z-index: 60;\n    bottom: 0;\n    left: 50%;\n    margin-left: -75px;\n  } \n  /*\u597D\u4E86\uFF0C\u5927\u529F\u544A\u6210\uFF01*/ \n";
-exports.default = string;
-},{}],"test.js":[function(require,module,exports) {
-'use strict';
-
-var _css = require('./css.js');
-
-var _css2 = _interopRequireDefault(_css);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+})({"test.js":[function(require,module,exports) {
+var string = '\n/*\u4F60\u597D\uFF0C\u6211\u662F\u4E00\u540D\u524D\u7AEF\u65B0\u4EBA\uFF0C\u63A5\u4E0B\u6765\u6211\u5C06\u7528CSS\u6765\u753B\u4E00\u53EA\u9F99\u732B*/\n/*\u9996\u5148\uFF0C\u51C6\u5907\u597D\u4E00\u4E2A\u80CC\u666F*/\n#wrapper{\n    width:100%;\n    background-color: #eff2cc;\n    height:50vh;\n    position:relative;\n}\n/*\u8BA9\u6211\u4EEC\u5F00\u59CB\u753B\u9F99\u732B\u7684\u8111\u888B*/\n.head-mask {\n    background-color: #eff2cc;\n  }\n  .plant .back {\n    float: left;\n    width: 100%;\n    height: 2px;\n    background-color: #24551b;\n  }\n  .leaf {\n    position: absolute;\n    z-index: 60;\n    background-color: #6ba03c;\n  }\n  .head {\n    float: left;\n    width: 150px;\n    height: 130px;\n    margin-left: 42px;\n    position: relative;\n  }\n  /*\u7ED9\u5B83\u753B\u4E0A\u8033\u6735*/\n  .ear {\n    width: 14px;\n    height: 46px;\n    top: -30px;\n    position: absolute;\n    z-index:1;\n  }\n  .ear::before,\n  .ear::after {\n    width: 0;\n    height: 0;\n    position: absolute;\n    content: "";\n    border-bottom: 30px solid #afa5a0;\n    top: 0;\n  }\n  .ear .top {\n    width: 14px;\n    height: 20px;\n    position: absolute;\n    top: -6px;\n  }\n  .ear .bottom {\n    width: 30px;\n    height: 14px;\n    position: absolute;\n    bottom: 9px;\n    left: -8px;\n  }\n  /*\u6DFB\u4E0A\u773C\u775B*/\n  .eye {\n    width: 18px;\n    height: 18px;\n    overflow: hidden;\n    top: 30px;\n    position: absolute;\n    background-color: #fff;\n  }\n  .eye .pupil {\n    width: 12px;\n    height: 12px;\n    position: absolute;\n    left: 5px;\n    top: 5px;\n    background-color: #6c5f57;\n    transition: all 1s ease;\n    animation: pupil_eye 6s ease 3s infinite;\n  }\n  /*\u8865\u4E0A\u9F3B\u5B50*/\n  .nose {\n    width: 24px;\n    height: 10px;\n    top: 34px;\n    left: 50%;\n    margin-left: -12px;\n    position: absolute;\n    background-color: #5e5244;\n  }\n  /*\u7ED9\u5B83\u52A0\u70B9\u80E1\u987B*/\n  .moustache .line1,\n  .moustache .line2,\n  .moustache .line3 {\n    height: 2px;\n    clear: both;\n    background-color: #464b4d;\n    margin-bottom: 5px;\n  }\n  .moustache-left .line2 {\n    margin-right: 5px;\n  }\n  .moustache-left .line3 {\n    margin-right: 9px;\n  }\n  /*\u63A5\u4E0B\u6765\u753B\u9F99\u732B\u80D6\u4E4E\u4E4E\u7684\u8EAB\u4F53*/\n  .body {\n    float: left;\n    width: 220px;\n    height: 230px;\n    margin: -78px 0 0 7px;\n    position: relative;\n  }\n  /*\u6DFB\u4E0A\u624B\u81C2*/\n  .arm {\n    width: 70px;\n    height: 124px;\n    position: absolute;\n  }\n  .hand {\n    position: absolute;\n    bottom: 0;\n    width: 70px;\n    height: 80px;\n  }\n  .forearm {\n    width: 24px;\n    height: 70px;\n    position: absolute;\n    margin-top: -3px;\n  }\n\n  /*\u7ED9\u5B83\u7684\u8179\u90E8\u586B\u4E0A\u82B1\u7EB9*/\n  .belly {\n    width: 200px;\n    height: 190px;\n    top: 10px;\n    left: 50%;\n    margin-left: -100px;\n    position: absolute;\n    background-color: #f8ddcc;\n  } \n  .marking {\n    width: 30px;\n    height: 14px;\n    position: absolute;\n    background-color: #91838e;\n  }\n  .marking:before {\n    width: 30px;\n    height: 20px;\n    top: 3px;\n    left: 0;\n    position: absolute;\n    content: "";\n    background-color: #f8ddcc;\n    border-radius: 50%;\n  }\n\n  /*\u6700\u540E\u662F\u9F99\u732B\u7684\u811A*/\n  .foot {\n    width: 150px;\n    height: 18px;\n    background-color: #eff2cc;\n    position: absolute;\n    z-index: 60;\n    bottom: 0;\n    left: 50%;\n    margin-left: -75px;\n  } \n  /*\u597D\u4E86\uFF0C\u5927\u529F\u544A\u6210\uFF01*/ \n';
 
 var player = {
-    id: undefined,
-    speed: 50,
-    n: 1,
-    ui: {
-        demo: document.querySelector('#demo'),
-        demo2: document.querySelector('#demo2')
-    },
-    events: {
-        '#btnPause': 'pause',
-        '#btnPlay': 'play', '#btnSlow': 'slow', '#btnNormal': 'normal',
-        '#btnFast': 'fast'
-    },
-    init: function init() {
-        player.ui.demo.innerText = _css2.default.substring(0, player.n);
-        player.ui.demo2.innerHTML = _css2.default.substring(0, player.n);
-        player.play();
-        player.bindEvents();
-    },
-    bindEvents: function bindEvents() {
-        for (var key in player.events) {
-            if (player.events.hasOwnProperty(key)) {
-                var value = player.events[key];
-                document.querySelector(key).onclick = player[value];
-            }
-        }
-    },
-    run: function run() {
-        player.n += 1;
-        if (player.n > _css2.default.length) {
-            window.clearInterval(player.id);
-            return;
-        }
-        player.ui.demo.innerText = _css2.default.substring(0, player.n);
-        player.ui.demo2.innerHTML = _css2.default.substring(0, player.n);
-        player.ui.demo.scrollTop = player.ui.demo.scrollHeight;
-    },
-    play: function play() {
-        player.id = setInterval(player.run, player.speed);
-    },
-    pause: function pause() {
-        window.clearInterval(player.id);
-    },
-    slow: function slow() {
-        player.pause();
-        player.speed = 150;
-        player.play();
-    },
-    normal: function normal() {
-        player.pause();
-        player.speed = 75;
-        player.play();
-    },
-    fast: function fast() {
-        player.pause();
-        player.speed = 5;
-        player.play();
+  id: undefined,
+  speed: 50,
+  n: 1,
+  ui: {
+    demo: document.querySelector('#demo'),
+    demo2: document.querySelector('#demo2')
+  },
+  events: {
+    '#btnPause': 'pause',
+    '#btnPlay': 'play', '#btnSlow': 'slow', '#btnNormal': 'normal',
+    '#btnFast': 'fast'
+  },
+  init: function init() {
+    player.ui.demo.innerText = string.substring(0, player.n);
+    player.ui.demo2.innerHTML = string.substring(0, player.n);
+    player.play();
+    player.bindEvents();
+  },
+  bindEvents: function bindEvents() {
+    for (var key in player.events) {
+      if (player.events.hasOwnProperty(key)) {
+        var value = player.events[key];
+        document.querySelector(key).onclick = player[value];
+      }
     }
+  },
+  run: function run() {
+    player.n += 1;
+    if (player.n > string.length) {
+      window.clearInterval(player.id);
+      return;
+    }
+    player.ui.demo.innerText = string.substring(0, player.n);
+    player.ui.demo2.innerHTML = string.substring(0, player.n);
+    player.ui.demo.scrollTop = player.ui.demo.scrollHeight;
+  },
+  play: function play() {
+    player.id = setInterval(player.run, player.speed);
+  },
+  pause: function pause() {
+    window.clearInterval(player.id);
+  },
+  slow: function slow() {
+    player.pause();
+    player.speed = 150;
+    player.play();
+  },
+  normal: function normal() {
+    player.pause();
+    player.speed = 75;
+    player.play();
+  },
+  fast: function fast() {
+    player.pause();
+    player.speed = 5;
+    player.play();
+  }
 
 };
 
 player.init();
-},{"./css.js":"css.js"}],"C:\\Users\\dragon\\AppData\\Local\\Yarn\\Data\\global\\node_modules\\parcel\\src\\builtins\\hmr-runtime.js":[function(require,module,exports) {
+},{}],"C:\\Users\\dragon\\AppData\\Local\\Yarn\\Data\\global\\node_modules\\parcel\\src\\builtins\\hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -211,7 +197,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '51800' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '65070' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
