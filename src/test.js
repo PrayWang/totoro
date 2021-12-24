@@ -23,6 +23,10 @@ const string = `
     z-index: 60;
     background-color: #6ba03c;
   }
+  .plant .back:before{
+  border-bottom: 2px solid #24551b;
+  }
+
   .head {
     float: left;
     width: 150px;
@@ -76,8 +80,6 @@ const string = `
     left: 5px;
     top: 5px;
     background-color: #6c5f57;
-    transition: all 1s ease;
-    animation: pupil_eye 6s ease 3s infinite;
   }
   /*补上鼻子*/
   .nose {
@@ -97,12 +99,6 @@ const string = `
     clear: both;
     background-color: #464b4d;
     margin-bottom: 5px;
-  }
-  .moustache-left .line2 {
-    margin-right: 5px;
-  }
-  .moustache-left .line3 {
-    margin-right: 9px;
   }
   /*接下来画龙猫胖乎乎的身体*/
   .body {
@@ -171,7 +167,7 @@ const string = `
   } 
   /*好了，大功告成！*/ 
 `
-
+ 
 const player ={
     id : undefined,
     speed : 50,
@@ -182,7 +178,9 @@ const player ={
     },
     events : {
         '#btnPause':'pause',
-        '#btnPlay':'play',      '#btnSlow':'slow',        '#btnNormal':'normal',
+        '#btnPlay':'play',      
+        '#btnSlow':'slow',        
+        '#btnNormal':'normal',
         '#btnFast':'fast'        
     },
     init : ()=>{
