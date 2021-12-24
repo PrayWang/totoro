@@ -165,6 +165,10 @@ const string = `
     left: 50%;
     margin-left: -75px;
   } 
+  .foot:before,
+  .foot:after {
+  border-bottom: 4px solid #eff2cc;
+  }
   /*好了，大功告成！*/ 
 `
  
